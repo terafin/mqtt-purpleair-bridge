@@ -66,7 +66,7 @@ const checkPurpleAirHost = function() {
         }
 
         Object.keys(result).forEach(metric => {
-            client.smartPublish(topic_prefix + '/' + metric.toString(), result[metric].toString())
+            client.smartPublish(topic_prefix + '/' + metric.toString(), result[metric].toString(), mqttOptions)
         });
 
         health.healthyEvent()

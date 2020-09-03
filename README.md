@@ -21,8 +21,9 @@ services:
     environment:
       LOGGING_NAME: mqtt-purpleair-bridge
       TZ: America/Los_Angeles
-      TOPIC_PREFIX: /your_topic_prefix  (eg: /energyusage)
-      PURPLE_AIR_HOST: YOUR_PURPLE_AIR_IP
+      TOPIC_PREFIX: /your_topic_prefix  (eg: /environment/air)
+      (OPTIONAL) PURPLE_AIR_HOST: YOUR_PURPLE_AIR_IP
+      (OPTIONAL) PURPLE_AIR_STATION: PURPLE_AIR_STATION_NUMBER
       HEALTH_CHECK_PORT: "3001"
       HEALTH_CHECK_TIME: "120"
       HEALTH_CHECK_URL: /healthcheck
@@ -34,14 +35,8 @@ services:
 Here's an example publish for my setup:
 
 ```
-/energyusage/ovens 0
-/energyusage/register_3_4 -3
-/energyusage/rack_furnace 1044
-/energyusage/pool 1055
-/energyusage/garage_entry_lights_outlets 6
-/energyusage/entrance_lamp 13
-/energyusage/register_25_pair___low_watt 0
-/energyusage/attic_garage_outlets_lights 120
-/energyusage/house 3530
-/energyusage/fridge 78
+/environment/air/pm1_0_cf_1_b 8.51
+/environment/air/p_2_5_um_b 7.79
+/environment/air/YOUR_STATION_NUMBER/p_2_5_um 11.21
+/environment/air/YOUR_STATION_NUMBER/pm1_0_atm 8.83
 ```

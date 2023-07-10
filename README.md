@@ -17,7 +17,7 @@ Here's an example docker compose:
 version: '3.3'
 services:
   mqtt-purpleair-bridge:
-    image: terafin/mqtt-purpleair-bridge:latest
+    image: ghcr.io/terafin/mqtt-purpleair-bridge:latest
     environment:
       LOGGING_NAME: mqtt-purpleair-bridge
       TZ: America/Los_Angeles
